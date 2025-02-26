@@ -2,10 +2,10 @@
 name = "hf-hub"
 version = "0.4.1"
 edition = "2021"
-homepage = "https://github.com/huggingface/hf-hub"
+homepage = "https://github.com/yetone/hf-hub"
 license = "Apache-2.0"
 documentation = "https://docs.rs/hf-hub"
-repository = "https://github.com/huggingface/hf-hub"
+repository = "https://github.com/yetone/hf-hub"
 readme = "README.md"
 keywords = ["huggingface", "hf", "hub", "machine-learning"]
 description = """
