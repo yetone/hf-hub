@@ -48,7 +48,7 @@ version = "0.2"
 optional = true
 
 [features]
-default = ["default-tls", "tokio", "reqwest"]
+default = ["default-tls", "tokio"]
 # These features are only relevant when used with the `tokio` feature, but this might change in the future.
 default-tls = ["native-tls"]
 native-tls = ["dep:reqwest", "reqwest?/native-tls-vendored", "dep:native-tls", "dep:ureq", "ureq?/native-tls"]
