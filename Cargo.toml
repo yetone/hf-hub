@@ -1,7 +1,7 @@
 [package]
 name = "hf-hub"
 version = "0.4.1"
-edition = "2021"
+edition = "2024"
 homepage = "https://github.com/yetone/hf-hub"
 license = "Apache-2.0"
 documentation = "https://docs.rs/hf-hub"
@@ -17,26 +17,26 @@ It aims to be compatible with [huggingface_hub](https://github.com/huggingface/h
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-futures = { version = "0.3.28", optional = true }
+futures = { version = "0.3.34", optional = true }
 dirs = "5.0.1"
-http = { version = "1.0.0", optional = true }
-indicatif = { version = "0.17.5", optional = true }
-log = "0.4.19"
-num_cpus = { version = "1.15.0", optional = true }
-rand = { version = "0.8.5", optional = true }
-reqwest = { version = "0.12.2", optional = true, default-features = false, features = [
+http = { version = "1.5.0", optional = true }
+indicatif = { version = "0.17.11", optional = true }
+log = "0.4.33"
+num_cpus = { version = "1.17.0", optional = true }
+rand = { version = "0.8.7", optional = true }
+reqwest = { version = "0.12.28", optional = true, default-features = false, features = [
   "json",
   "stream",
 ] }
 serde = { version = "1", features = ["derive"], optional = true }
 serde_json = { version = "1", optional = true }
 thiserror = { version = "2", optional = true }
-tokio = { version = "1.29.1", optional = true, features = ["fs", "macros"] }
-ureq = { version = "2.8.0", optional = true, features = [
+tokio = { version = "1.53.1", optional = true, features = ["fs", "macros"] }
+ureq = { version = "2.12.1", optional = true, features = [
   "json",
   "socks-proxy",
 ] }
-native-tls = { version = "0.2.12", optional = true, features = ["vendored"] }
+native-tls = { version = "0.2.18", optional = true, features = ["vendored"] }
 
 [target.'cfg(windows)'.dependencies.windows-sys]
 version = "0.59"
@@ -51,7 +51,7 @@ optional = true
 default = ["default-tls", "tokio"]
 # These features are only relevant when used with the `tokio` feature, but this might change in the future.
 default-tls = ["native-tls"]
-native-tls = ["dep:reqwest", "reqwest?/native-tls-vendored", "dep:native-tls", "dep:ureq", "ureq?/native-tls", "ureq?/vendored"]
+native-tls = ["dep:reqwest", "reqwest?/native-tls-vendored", "dep:native-tls", "dep:ureq", "ureq?/native-tls"]
 rustls-tls = ["reqwest?/rustls-tls"]
 tokio = [
   "dep:futures",
@@ -85,4 +85,4 @@ ureq = [
 [dev-dependencies]
 hex-literal = "0.4.1"
 sha2 = "0.10"
-tokio-test = "0.4.2"
+tokio-test = "0.4.5"
